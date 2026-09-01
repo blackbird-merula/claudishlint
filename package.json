@@ -1,0 +1,44 @@
+{
+	"name": "@blackbird-merula/claudishlint",
+	"version": "0.1.0",
+	"description": "A Pi extension that lints agent responses for 'Claudish' prose and prompts a plain-English rewrite.",
+	"type": "module",
+	"keywords": [
+		"pi-package",
+		"claudish",
+		"linter",
+		"extension"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/blackbird-merula/claudishlint.git"
+	},
+	"files": [
+		"src/index.ts",
+		"src/claudishlint/index.ts",
+		"src/claudishlint/rules.ts",
+		"src/claudishlint/types.ts",
+		"src/claudishlint/finders.ts",
+		"src/claudishlint/README.md"
+	],
+	"pi": {
+		"extensions": [
+			"./src/index.ts"
+		]
+	},
+	"scripts": {
+		"lint": "biome check .",
+		"format": "biome format --write .",
+		"test": "node --test src/claudishlint/test/*.test.ts",
+		"sanity": "node --test src/claudishlint/test/sanity.test.ts",
+		"typecheck": "tsc --noEmit"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.11",
+		"@types/node": "^24.0.0",
+		"typescript": "^5.8.0"
+	}
+}

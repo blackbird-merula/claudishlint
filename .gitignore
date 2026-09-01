@@ -1,0 +1,25 @@
+# Data outputs (the pristine source is committed; derived data is not)
+data/partitioned/
+data/sft/
+data/authored/
+
+# Vendored source clone (has its own .git; not part of this repo)
+data/raw/load-bearing/
+
+# Training outputs
+outputs/
+runs/
+*.safetensors
+*.gguf
+
+# caches and tooling
+.cache/
+.idea/
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+/data/raw/
+/data/claudish_pairs.jsonl
+/src/claudishlint/test/fixtures/
